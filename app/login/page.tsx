@@ -35,12 +35,14 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white flex items-center justify-center px-4">
-      <Card className="w-full max-w-md p-8">
+    <div className="min-h-screen bg-gradient-to-b from-blue-200 to-blue-50 flex items-center justify-center px-4">
+      <Card className="w-full max-w-md p-8 shadow-lg rounded-lg">
         <div className="flex justify-center mb-6">
-          <Fingerprint className="h-12 w-12 text-blue-600" />
+          <Fingerprint className="h-12 w-12 text-blue-700" />
         </div>
-        <h1 className="text-2xl font-bold text-center mb-6">Login with Aadhar</h1>
+        <h1 className="text-3xl font-bold text-center mb-6 text-gray-900">
+          Login with Aadhar
+        </h1>
         <form onSubmit={handleSubmit}>
           <div className="space-y-4">
             <div>
@@ -55,13 +57,12 @@ export default function Login() {
                 onChange={(e) => setAadharId(e.target.value.replace(/\D/g, '').slice(0, 12))}
                 className="w-full"
                 maxLength={12}
-                pattern="\d{12}"
                 required
               />
             </div>
             <Button
               type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-700"
+              className="w-full bg-blue-600 hover:bg-blue-700 transition duration-300 ease-in-out"
               disabled={loading}
             >
               {loading ? 'Verifying...' : 'Continue'}
